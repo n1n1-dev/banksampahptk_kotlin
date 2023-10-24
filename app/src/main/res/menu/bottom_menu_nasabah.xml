@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/bottom_home"
+        android:title="Beranda"
+        android:icon="@drawable/ic_home"/>
+    <item
+        android:id="@+id/bottom_bank_sampah_users"
+        android:title="Bank Sampah"
+        android:icon="@drawable/ic_maps"/>
+    <item
+        android:id="@+id/bottom_keranjang_estimasi"
+        android:title="Keranjang Estimasi"
+        android:icon="@drawable/ic_wallet"/>
+    <item
+        android:id="@+id/bottom_settings"
+        android:title="Pengaturan"
+        android:icon="@drawable/ic_settings_account"/>
+</menu>

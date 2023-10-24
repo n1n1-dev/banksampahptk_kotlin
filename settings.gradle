@@ -1,0 +1,43 @@
+pluginManagement {
+    repositories {
+        google()
+        mavenCentral()
+        gradlePluginPortal()
+
+        maven {
+            url 'https://api.mapbox.com/downloads/v2/releases/maven'
+            authentication {
+                basic(BasicAuthentication)
+            }
+            credentials {
+                username = 'mapbox'
+                password = 'sk.eyJ1IjoiYmFua3NhbXBhaHBvbnRpYW5hayIsImEiOiJjbG44bzdpZ3UwMHNtMmpuajduZGowaThoIn0.jLn9CrUFTmECXwyHSdALLw'
+            }
+        }
+
+        maven { url 'https://jitpack.io' }
+    }
+}
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+
+        maven {
+            url 'https://api.mapbox.com/downloads/v2/releases/maven'
+            authentication {
+                basic(BasicAuthentication)
+            }
+            credentials {
+                username = 'mapbox'
+                password = 'sk.eyJ1IjoiYmFua3NhbXBhaHBvbnRpYW5hayIsImEiOiJjbG44bzdpZ3UwMHNtMmpuajduZGowaThoIn0.jLn9CrUFTmECXwyHSdALLw'
+            }
+        }
+
+        maven { url 'https://jitpack.io' }
+
+    }
+}
+rootProject.name = "BankSampahPontianak"
+include ':app'

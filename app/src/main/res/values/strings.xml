@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Bank Sampah Pontianak</string>
+    <string name="save">Simpan</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="bank_sampah">Bank Sampah</string>
+    <string name="title_activity_main">MainActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="mapbox_access_token">sk.eyJ1IjoiYmFua3NhbXBhaHBvbnRpYW5hayIsImEiOiJjbG44bzdpZ3UwMHNtMmpuajduZGowaThoIn0.jLn9CrUFTmECXwyHSdALLw</string>
+
+</resources>

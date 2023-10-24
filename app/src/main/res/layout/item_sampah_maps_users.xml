@@ -1,0 +1,58 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/parentItemsMapsUsers"
+        android:minHeight="?attr/actionBarSize"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize">
+
+        <ImageButton
+            android:id="@+id/button_maps"
+            android:src="@drawable/ic_list"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:layout_width="?attr/actionBarSize"
+            android:layout_height="?attr/actionBarSize"/>
+
+        <View
+            android:layout_width="10dp"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/namaSampahMapsUser"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nama Sampah" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/satuanSampahMapsUser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Satuan Sampah"
+        android:paddingLeft="70dp"
+        android:paddingBottom="3dp"/>
+
+    <TextView
+        android:id="@+id/hargaBeliSampahMapsUser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Harga Beli Sampah"
+        android:paddingLeft="70dp"
+        android:paddingBottom="5dp"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_addchart"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Tambah Keranjang Estimasi"
+        android:textColor="@android:color/white"
+        android:paddingLeft="70dp"
+        android:paddingBottom="10dp"/>
+
+</LinearLayout>

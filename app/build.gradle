@@ -1,0 +1,71 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'com.google.gms.google-services'
+    id 'kotlin-parcelize'
+}
+
+android {
+    namespace 'com.example.bank_sampah_app2023'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "com.example.bank_sampah_app2023"
+        minSdk 21
+        targetSdk 34
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    buildFeatures {
+        viewBinding = true
+    }
+
+}
+
+dependencies {
+
+    implementation 'com.google.firebase:firebase-core:21.1.1'
+    implementation 'com.google.firebase:firebase-firestore:24.9.0'
+    implementation 'com.google.firebase:firebase-common-ktx:20.4.2'
+    implementation 'com.google.firebase:firebase-firestore-ktx:24.9.0'
+    implementation 'com.firebaseui:firebase-ui-firestore:8.0.2'
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.10.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'com.google.firebase:firebase-auth-ktx:22.2.0'
+    implementation 'androidx.navigation:navigation-fragment:2.7.4'
+    implementation "androidx.fragment:fragment-ktx:1.6.1"
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.7.4'
+    implementation 'androidx.navigation:navigation-ui-ktx:2.7.4'
+
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4'
+
+    implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
+
+    implementation ('com.mapbox.maps:android:10.16.0'){
+        exclude group: 'group_name', module: 'module_name'
+    }
+    implementation("com.google.android.gms:play-services-location:21.0.1")
+
+    implementation 'androidx.preference:preference:1.2.1'
+
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+}

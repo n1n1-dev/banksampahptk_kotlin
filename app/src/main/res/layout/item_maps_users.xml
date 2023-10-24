@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:background="#fff"
+        android:id="@+id/parentMapsUsers"
+        android:focusable="true"
+        android:clickable="true"
+        android:minHeight="?attr/actionBarSize"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="6dp"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize">
+
+        <ImageButton
+            android:id="@+id/button_maps"
+            android:src="@drawable/ic_loc_on"
+            android:elevation="10dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:layout_width="?attr/actionBarSize"
+            android:layout_height="?attr/actionBarSize"/>
+
+        <View
+            android:layout_width="10dp"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/namabsmuText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Text View"
+            android:textStyle="bold"
+            android:textColor="@color/deep_purple"/>
+
+        <View
+            android:layout_width="15dp"
+            android:layout_height="wrap_content"/>
+
+        <ImageButton
+            android:id="@+id/expand_buttonbsmu"
+            android:src="@drawable/ic_expanded_more"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:layout_width="?attr/actionBarSize"
+            android:layout_height="?attr/actionBarSize"/>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#f2f2f2"/>
+
+    <LinearLayout
+        android:layout_below="@id/parentMapsUsers"
+        android:visibility="gone"
+        android:background="#f7f7f7"
+        android:orientation="vertical"
+        android:id="@+id/expanded_areabsmu"
+        android:padding="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/jaraksbsmuText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginBottom="2dp"
+            android:text="Text View"
+            android:textStyle="bold"
+            />
+
+        <TextView
+            android:id="@+id/legalitasbsmuText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginBottom="2dp"
+            android:text="Text View"
+            />
+
+        <TextView
+            android:id="@+id/lokasibsmuText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginBottom="2dp"
+            android:text="Text View"
+            />
+
+        <TextView
+            android:id="@+id/alamatbsmuText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginBottom="5dp"
+            android:text="Text View"
+            />
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:padding="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/titleBsMaps"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:text="Daftar Jenis Sampah"
+                android:textColor="@color/deep_purple"
+                android:textStyle="bold"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:scrollbars="vertical"
+                android:id="@+id/sampahMapsUsersRV"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="10dp"
+                tools:listitem="@layout/item_sampah_maps_users">
+
+            </androidx.recyclerview.widget.RecyclerView>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#f2f2f2"/>
+
+</RelativeLayout>

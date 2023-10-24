@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/bottom_home"
+        android:title="Beranda"
+        android:icon="@drawable/ic_home"/>
+    <item
+        android:id="@+id/bottom_admin"
+        android:title="Users"
+        android:icon="@drawable/ic_admin"/>
+    <item
+        android:id="@+id/bottom_bank_sampah"
+        android:title="Bank Sampah"
+        android:icon="@drawable/ic_banksampah"/>
+    <item
+        android:id="@+id/bottom_sampah"
+        android:title="Sampah"
+        android:icon="@drawable/ic_sampah"/>
+    <item
+        android:id="@+id/bottom_settings"
+        android:title="Pengaturan"
+        android:icon="@drawable/ic_settings_account"/>
+</menu>

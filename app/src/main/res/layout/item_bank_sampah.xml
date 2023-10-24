@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    >
+
+    <LinearLayout
+        android:background="#fff"
+        android:id="@+id/parentBSSampah"
+        android:focusable="true"
+        android:clickable="true"
+        android:minHeight="?attr/actionBarSize"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize">
+
+        <View
+            android:layout_width="15dp"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/namabsText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Text View"
+            android:textColor="#37474F"/>
+
+        <View
+            android:layout_width="15dp"
+            android:layout_height="wrap_content"/>
+
+        <ImageButton
+            android:id="@+id/expand_buttonbs"
+            android:src="@drawable/ic_expanded_more"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:layout_width="?attr/actionBarSize"
+            android:layout_height="?attr/actionBarSize"/>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#f2f2f2"/>
+
+    <LinearLayout
+        android:layout_below="@id/parentBSSampah"
+        android:visibility="gone"
+        android:background="#f7f7f7"
+        android:orientation="vertical"
+        android:id="@+id/expanded_areabs"
+        android:padding="35dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/legalitasbsText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:text="Text View"
+            />
+
+        <TextView
+            android:id="@+id/lokasibsText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:text="Text View"
+            />
+
+        <TextView
+            android:id="@+id/alamatbsText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:text="Text View"
+            />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:padding="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageButton
+                android:id="@+id/editbsBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_btn_edit" />
+
+            <ImageButton
+                android:id="@+id/hapusbsBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_btn_delete" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#f2f2f2"/>
+
+</RelativeLayout>
