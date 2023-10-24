@@ -72,7 +72,7 @@ class MainActivity : AppCompatActivity() {
                                 replaceFragment(UsersFragment(), this)
                                 bottomNavigationView.setSelectedItemId(R.id.bottom_admin);
                             }
-                            else if (receivedValue == "backfromcrudbanksampah") {
+                            else if ((receivedValue == "backfromcrudbanksampah") || (receivedValue == "backfrommapsadmin")) {
                                 replaceFragment(BankSampahFragment(), this)
                                 bottomNavigationView.setSelectedItemId(R.id.bottom_bank_sampah);
                             }

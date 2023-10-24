@@ -36,7 +36,7 @@ class MapsAdmin : AppCompatActivity(), OnMapLongClickListener {
 
         btnBack = findViewById(R.id.back_buttonmapsadmin)
         btnBack.setOnClickListener {
-            finish()
+            back()
         }
 
         icon = BitmapUtils.bitmapFromDrawableRes(
@@ -122,6 +122,12 @@ class MapsAdmin : AppCompatActivity(), OnMapLongClickListener {
     override fun onDestroy() {
         markerManager.destroy()
         super.onDestroy()
+    }
+
+    private fun back() {
+        startActivity(Intent(this, MainActivity::class.java).apply {
+            putExtra(MainActivity.SIGNIN, "backfrommapsadmin")
+        })
     }
 
     companion object {
