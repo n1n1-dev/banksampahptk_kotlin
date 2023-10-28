@@ -31,7 +31,8 @@ class CrudBankSampah : AppCompatActivity() {
     private lateinit var edNama : TextView
     private lateinit var edLegalitas : TextView
     private lateinit var edAlamat : TextView
-    private lateinit var edLokasi : TextView
+    private lateinit var edLatLokasi : TextView
+    private lateinit var edLongLokasi : TextView
     private lateinit var btnLokasi : Button
     private lateinit var btnSave: Button
 
@@ -44,7 +45,8 @@ class CrudBankSampah : AppCompatActivity() {
         btnLokasi = findViewById(R.id.btn_lokasi)
         edNama = findViewById(R.id.edTextNamaBS)
         edLegalitas = findViewById(R.id.edTextLegalitasBS)
-        edLokasi = findViewById(R.id.edTextLokasiBS)
+        edLatLokasi = findViewById(R.id.edTextLokasiLatBS)
+        edLongLokasi = findViewById(R.id.edTextLokasiLongBS)
         edAlamat = findViewById(R.id.edTextAlamatBS)
         btnSave = findViewById(R.id.btn_savebanksampah)
 
@@ -76,12 +78,13 @@ class CrudBankSampah : AppCompatActivity() {
         super.onActivityResult(requestCode, resultCode, data)
 
         if (requestCode == 1 && resultCode == Activity.RESULT_OK) {
-            val lokasi = data?.getStringExtra("lokasi")
+            val loklat = data?.getStringExtra("lokasilat")
+            val loklong = data?.getStringExtra("lokasilong")
             val alamat = data?.getStringExtra("alamat")
 
-            edLokasi.text = lokasi
+            edLatLokasi.text = loklat
+            edLongLokasi.text = loklong
             edAlamat.text = alamat
-
         }
     }
 
@@ -89,14 +92,12 @@ class CrudBankSampah : AppCompatActivity() {
         val dataList = intent.getStringArrayListExtra(dataBSList)
         val namaBSInput = edNama.text.toString()
         val legalitasBSInput = edLegalitas.text.toString()
-        val lokasiBSInput = edLokasi.text.toString()
+        val lat = edLatLokasi.text.toString()
+        val long = edLongLokasi.text.toString()
         val alamatBSInput = edAlamat.text.toString()
 
-        if (namaBSInput.isNotEmpty() && legalitasBSInput.isNotEmpty() && lokasiBSInput.isNotEmpty() && alamatBSInput.isNotEmpty()) {
-            val parts = lokasiBSInput.split(",")
-            val latitude = parts[0].toDouble()
-            val longitude = parts[1].toDouble()
-            val lok = GeoPoint(latitude, longitude)
+        if (namaBSInput.isNotEmpty() && legalitasBSInput.isNotEmpty() && lat.isNotEmpty() && long.isNotEmpty() && alamatBSInput.isNotEmpty()) {
+            val lok = GeoPoint(lat.toDouble(), long.toDouble())
             if ((title == "Tambah Bank Sampah") && (dataList == null)) {
                 val data = HashMap<String,Any>()
                 data["nama"] = namaBSInput
@@ -137,7 +138,8 @@ class CrudBankSampah : AppCompatActivity() {
             if (receivedList != null) {
                 edNama.text = receivedList[1].toString()
                 edLegalitas.text = receivedList[2].toString()
-                edLokasi.text = "${receivedList[3]}, ${receivedList[4]}"
+                edLatLokasi.text = receivedList[3].toString()
+                edLongLokasi.text = receivedList[4].toString()
                 edAlamat.text = receivedList[5].toString()
             }
         }

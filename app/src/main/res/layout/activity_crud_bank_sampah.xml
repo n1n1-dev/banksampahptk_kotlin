@@ -100,7 +100,7 @@
                     app:layout_constraintTop_toBottomOf="@+id/legalitasbslayout" />
 
                 <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/lokasilayoutbs"
+                    android:id="@+id/lokasilatlayoutbs"
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -112,12 +112,33 @@
                     app:layout_constraintTop_toBottomOf="@+id/btn_lokasi">
 
                     <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/edTextLokasiBS"
+                        android:id="@+id/edTextLokasiLatBS"
                         android:layout_width="match_parent"
                         android:layout_height="60dp"
                         android:textSize="12sp"
-                        android:enabled="false"
-                        android:inputType="textMultiLine" />
+                        android:hint="Latitude"
+                        android:inputType="numberDecimal|numberSigned" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/lokasilonglayoutbs"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="16dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/lokasilatlayoutbs">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edTextLokasiLongBS"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:textSize="12sp"
+                        android:hint="Longitude"
+                        android:inputType="numberDecimal|numberSigned" />
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <!-- TextInputLayout Alamat -->
@@ -131,7 +152,7 @@
                     android:layout_marginEnd="16dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/lokasilayoutbs">
+                    app:layout_constraintTop_toBottomOf="@+id/lokasilonglayoutbs">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/edTextAlamatBS"

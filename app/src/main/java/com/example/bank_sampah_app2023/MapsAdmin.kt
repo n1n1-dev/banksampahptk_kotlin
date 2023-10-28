@@ -62,19 +62,21 @@ class MapsAdmin : AppCompatActivity(), OnMapLongClickListener {
                             EdgeInsets(50.0, 50.0, 50.0, 50.0)
                         )
 
-                        val latitude = location.center!!.latitude()
-                        val longitude = location.center!!.longitude()
+                        lokasilat = location.center!!.latitude()
+                        lokasilong = location.center!!.longitude()
                         val myLocation = Geocoder(applicationContext, Locale.getDefault())
-                        val myList = myLocation.getFromLocation(latitude, longitude, 1)
+                        val myList = myLocation.getFromLocation(lokasilat, lokasilong, 1)
                         val addressLines: List<String> = if (myList!!.isNotEmpty()) myList[0].getAddressLine(0).split(",") else emptyList()
-                        lokasi = "$latitude, $longitude"
                         alamat = addressLines.toString()
+                        val lat = lokasilat.toString()
+                        val long = lokasilong.toString()
 
                         btnAddLok = findViewById(R.id.fab_add_location)
 
                         btnAddLok.setOnClickListener {
                             val resultIntent = Intent()
-                            resultIntent.putExtra("lokasi", lokasi)
+                            resultIntent.putExtra("lokasilat", lat)
+                            resultIntent.putExtra("lokasilong", long)
                             resultIntent.putExtra("alamat", alamat)
                             setResult(Activity.RESULT_OK, resultIntent)
                             finish()
@@ -87,9 +89,9 @@ class MapsAdmin : AppCompatActivity(), OnMapLongClickListener {
                         marker = markerManager.addMarker(
                             Marker(
                                 title = "Lokasi Bank Sampah",
-                                snippet = "$alamat \n Latitude: $latitude \n Longitude: $longitude",
+                                snippet = "$alamat \n Latitude: $lokasilat \n Longitude: $lokasilong",
                                 icon = icon,
-                                position = Point.fromLngLat(longitude, latitude)
+                                position = Point.fromLngLat(lokasilong, lokasilat)
                             )
                         )
                         markerManager.selectMarker(marker!!)
@@ -133,7 +135,8 @@ class MapsAdmin : AppCompatActivity(), OnMapLongClickListener {
     companion object {
         private const val LATITUDE = -0.0352231
         private const val LONGITUDE = 109.331888
-        var lokasi = ""
+        var lokasilat = 0.0
+        var lokasilong = 0.0
         var alamat = ""
     }
 }
