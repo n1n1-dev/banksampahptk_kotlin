@@ -87,7 +87,7 @@ class MapsAdmin : AppCompatActivity(), OnMapLongClickListener {
                         marker = markerManager.addMarker(
                             Marker(
                                 title = "Lokasi Bank Sampah",
-                                snippet = alamat,
+                                snippet = "$alamat \n Latitude: $latitude \n Longitude: $longitude",
                                 icon = icon,
                                 position = Point.fromLngLat(longitude, latitude)
                             )
