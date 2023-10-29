@@ -13,4 +13,7 @@
 
     <string name="mapbox_access_token">sk.eyJ1IjoiYmFua3NhbXBhaHBvbnRpYW5hayIsImEiOiJjbG44bzdpZ3UwMHNtMmpuajduZGowaThoIn0.jLn9CrUFTmECXwyHSdALLw</string>
 
+    <string name="toolbar_title">Cari Alamat</string>
+    <string name="query_hint">Dimana?</string>
+
 </resources>
