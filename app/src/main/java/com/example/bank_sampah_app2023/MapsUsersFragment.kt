@@ -41,7 +41,6 @@ import com.mapbox.maps.CameraOptions
 import com.mapbox.maps.MapView
 import com.mapbox.maps.dsl.cameraOptions
 import kotlin.math.max
-import kotlin.math.min
 
 
 class MapsUsersFragment : Fragment(), OnLocationClickListener {
@@ -265,6 +264,7 @@ class MapsUsersFragment : Fragment(), OnLocationClickListener {
                                                             foundElement.daftarSampah.add(sampahItem)
                                                             for (data in foundElement.daftarSampah) {
                                                                 data.rekomendasiTerbaik = rekomendasi(foundElement.jarakBankSampah, data.hargaBeli.toDouble())
+                                                                println("terbaik: ${data.rekomendasiTerbaik} jarak: ${foundElement.jarakBankSampah} hargabeli: ${data.hargaBeli.toDouble()}")
                                                             }
                                                             adapter.notifyDataSetChanged()
                                                         }
@@ -529,8 +529,8 @@ class MapsUsersFragment : Fragment(), OnLocationClickListener {
 
     // Inferensi Tsukamoto
     fun rekomendasi(jarak: Double, harga: Double): Double {
-        val a1 = min(dekat(jarak), mahal(harga))
-        val a2 = min(dekat(jarak), hargaSedang(harga))
+        val a1 = max(dekat(jarak), mahal(harga))
+        val a2 = max(sedang(jarak), hargaSedang(harga))
         val a3 = max(jauh(jarak), murah(harga))
 
         // Defuzzifikasi menggunakan metode centroid

@@ -104,9 +104,6 @@ class MapsAdmin : AppCompatActivity() {
         locationEngine = LocationEngineProvider.getBestLocationEngine(applicationContext)
 
         mapView = findViewById(R.id.map_view)
-        /*mapView.getMapboxMap().also { mapboxMap ->
-            mapboxMap.loadStyleUri(getMapStyleUri())
-        }*/
 
         btnBack = findViewById(R.id.back_buttonmapsadmin)
         btnBack.setOnClickListener {
@@ -235,7 +232,7 @@ class MapsAdmin : AppCompatActivity() {
 
             override fun onSearchResultSelected(searchResult: SearchResult, responseInfo: ResponseInfo) {
                 closeSearchView()
-                //searchPlaceView.open(SearchPlace.createFromSearchResult(searchResult, responseInfo))
+                searchPlaceView.open(SearchPlace.createFromSearchResult(searchResult, responseInfo))
                 mapMarkersManager.showMarker(searchResult.coordinate)
             }
 

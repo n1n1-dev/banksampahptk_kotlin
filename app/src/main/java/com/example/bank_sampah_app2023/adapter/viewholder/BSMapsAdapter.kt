@@ -120,7 +120,7 @@ class BSMapsItemAdapter(private val dataItem: List<SampahItem>) : RecyclerView.A
         format.setCurrency(Currency.getInstance("IDR"))
         val harga = format.format(item.hargaBeli)
         holder.namaSampahTextView.text = item.nama
-        holder.satuanSampahTextView.text = "Satuan: ${item.satuan}"
+        holder.satuanSampahTextView.text = "Satuan: ${item.satuan} \n terbaik ${item.rekomendasiTerbaik} "
         holder.hargaBeliSampahTextView.text = "Harga Beli: $harga"
 
         val targetRef = FirebaseFirestore.getInstance().document("sampahbanksampah/${item.idSampahBankSampah}")
